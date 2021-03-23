@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="UTF-8">
+<title>Oddziały</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<style type="text/css">
+@import
+	url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+.yellow {
+	color: #FFF842;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	line-height: 1.42em;
+	color: #A7A1AE;
+	background-color: #1F2739;
+}
+
+h1 {
+	font-size: 3em;
+	font-weight: 500;
+	text-align: center;
+	display: block;
+	line-height: 1em;
+	color: #FB667A;
+}
+
+.container th {
+	font-weight: bold;
+	font-size: 18px;
+	text-align: center;
+	color: #185875;
+}
+
+.container td {
+	text-align: center;
+	font-weight: light;
+	font-size: 1em;
+	-webkit-box-shadow: 0 2px 2px -2px #0E1119;
+	-moz-box-shadow: 0 2px 2px -2px #0E1119;
+	box-shadow: 0 2px 2px -2px #0E1119;
+	height: 65px;
+}
+
+.container tr:nth-child(odd) {
+	background-color: #323C50;
+}
+
+.container tr:nth-child(even) {
+	background-color: #2C3446;
+}
+
+.container th {
+	background-color: #1F2739;
+}
+
+.container tr:hover {
+	background-color: #464A52;
+	-webkit-box-shadow: 0 6px 6px -6px #0E1119;
+	-moz-box-shadow: 0 6px 6px -6px #0E1119;
+	box-shadow: 0 6px 6px -6px #0E1119;
+}
+
+.container td:hover {
+	background-color: #FFF842;
+	color: #403E10;
+	font-weight: bold;
+	box-shadow: #7F7C21 -1px 1px, #7F7C21 -2px 2px, #7F7C21 -3px 3px;
+	transform: translate3d(3px, -3px, 0);
+	transition-delay: 0s;
+	transition-duration: 0.4s;
+	transition-property: all;
+	transition-timing-function: line;
+}
+
+a:link {
+	color: #FB667A;
+	background-color: transparent;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #FB667A;
+	background-color: transparent;
+	text-decoration: none;
+}
+
+table {
+	table-layout: fixed;
+	width: 1300px;
+}
+
+button {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: light;
+	padding: 12px 24px;
+	color: #FFFFFF;
+	background-color: #323C50;
+	border: none;
+	font-size: 20px;
+}
+</style>
+
+<body>
+
+	<div align="center">
+		<!-- Page header -->
+		<h1>
+			<span class="yellow">Oddziały</span>
+		</h1>
+		<br />
+
+		<!-- Table -->
+		<table class="container">
+			<!-- Table header -->
+			<thead>
+				<tr>
+					<th>ID Oddziału</th>
+					<th>Numer telefonu</th>
+					<th>Czas otwarcia</th>
+					<th>Czas zamknięcia</th>
+					<th>ID Operatora</th>
+					<th>ID Adresu</th>
+				</tr>
+			</thead>
+
+			<!-- Table body -->
+			<tbody>
+				<tr th:each="dpr: ${departments}">
+					<td th:text="${dpr.id_oddzialu}">ID Oddziału</td>
+					<td th:text="${dpr.numer_telefonu}">Numer telefonu</td>
+					<td th:text="${dpr.czas_otwarcia}">Czas otwarcia</td>
+					<td th:text="${dpr.czas_zamkniecia}">Czas zamknięcia</td>
+					<td th:text="${dpr.id_operatora}">ID Operatora</td>
+					<td th:text="${dpr.id_adresu}">ID Adresu</td>
+				</tr>
+			</tbody>
+		</table>
+		<br /> <br /> <br />
+
+		<button id="backButton" class="float-left submit-button">Powrót</button>
+		&nbsp; &nbsp; &nbsp; &nbsp;
+		<button id="logoutButton" class="float-left submit-button">Wyloguj</button>
+
+		<script type="text/javascript">
+			document.getElementById("logoutButton").onclick = function() {
+				location.href = "../logout";
+			};
+			
+			document.getElementById("backButton").onclick = function() {
+				location.href = "/";
+			};
+		</script>
+
+	</div>
+
+</body>
+
+</html>

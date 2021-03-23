@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="UTF-8">
+<title>Nowy oddział</title>
+</head>
+
+<style type="text/css">
+@import
+	url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+.yellow {
+	color: #FFF842;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	line-height: 1.42em;
+	color: #FFFFFF;
+	background-color: #1F2739;
+}
+
+h1 {
+	font-size: 3em;
+	font-weight: 500;
+	text-align: center;
+	display: block;
+	line-height: 1em;
+	color: #FB667A;
+}
+
+.container td:last-child {
+	width: 400px;
+	text-align: left;
+	padding: 0px 20px;
+}
+
+.container td:first-child {
+	text-align: right;
+}
+
+.container td {
+	text-align: center;
+	font-weight: light;
+	font-size: 1em;
+	background-color: #1F2739;
+}
+
+table {
+	table-layout: fixed;
+	height: 400px;
+}
+
+input[type=text] {
+	font-family: 'Open Sans', sans-serif;
+	background-color: #2C3446;
+	color: #A7A1AE;
+	border: none;
+	width: 300px;
+	height: 30px;
+}
+
+button {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: light;
+	padding: 12px 24px;
+	color: #FFFFFF;
+	background-color: #323C50;
+	border: none;
+	font-size: 20px;
+}
+</style>
+
+<body>
+
+	<div align="center">
+		<!-- Page header -->
+		<h1><span class="yellow">Dodaj nowy oddział</span></h1>
+
+		<!-- End line/New line -->
+		<br />
+
+		<form action="#" th:action="@{/admin/saveDepartment}" th:object="${department}"
+			method="post">
+			<!-- Table -->
+			<table class="container">
+
+				<!-- Table rows -->
+				<tr>
+					<td>ID Oddziału:</td>
+					<td><input type="text" th:field="*{id_oddzialu}"></td>
+				</tr>
+
+				<tr>
+					<td>Numer telefonu:</td>
+					<td><input type="text" th:field="*{numer_telefonu}"></td>
+				</tr>
+
+				<tr>
+					<td>Czas otwarcia:</td>
+					<td><input type="text" th:field="*{czas_otwarcia}"></td>
+				</tr>
+
+				<tr>
+					<td>Czas zamknięcia:</td>
+					<td><input type="text" th:field="*{czas_zamkniecia}"></td>
+				</tr>
+
+				<tr>
+					<td>ID Operatora:</td>
+					<td><input type="text" th:field="*{id_operatora}"></td>
+				</tr>
+
+				<tr>
+					<td>ID Adresu:</td>
+					<td><input type="text" th:field="*{id_adresu}"></td>
+				</tr>
+
+			</table>
+
+			<br />
+			<button type="submit">Zapisz</button>
+		</form>
+
+
+	</div>
+
+</body>
+
+</html>

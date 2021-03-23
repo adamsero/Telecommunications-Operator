@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Operator Telekomunikacyjny</title>
+</head>
+
+<style type="text/css">
+@import
+	url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+.yellow {
+	color: #FFF842;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	line-height: 1.42em;
+	color: #FFFFFF;
+	background-color: #1F2739;
+}
+
+h1 {
+	font-size: 3em;
+	font-weight: 500;
+	text-align: center;
+	display: block;
+	line-height: 1em;
+	color: #FB667A;
+}
+
+h2 {
+	font-size: 25px;
+	font-weight: 500;
+	text-align: center;
+	display: block;
+	line-height: 1em;
+	color: #FFFFFF;
+}
+
+h3 {
+	font-size: 20px;
+	font-weight: 500;
+	text-align: center;
+	display: block;
+	line-height: 1em;
+	color: #FFFFFF;
+}
+
+button {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: light;
+	padding: 12px 24px;
+	color: #FFFFFF;
+	background-color: #323C50;
+	border: none;
+	font-size: 20px;
+}
+
+a:link {
+	color: #FB667A;
+	background-color: transparent;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #FB667A;
+	background-color: transparent;
+	text-decoration: none;
+}
+
+</style>
+
+<body>
+
+	<div align="center">
+
+		<h1>
+			<span class="yellow">Operator Telekomunikacyjny</span>
+		</h1>
+
+		<h2>
+			Aplikacja do zarządznia bazą danych firmy
+		</h2>
+		
+		<br /> <br />
+		
+		<h3>
+			Wybierz tabelę do której chcesz przejść:
+		</h3>
+		
+		<br />
+		
+		<h3><a th:href="@{'/admin/showDepartments'}">Oddziały</a></h3>
+		
+		<br />
+		
+		<h3><a th:href="@{'/admin/showAntennaTypes'}">Typy anten</a></h3>
+
+		<br /> <br />
+
+		<button id="logoutButton" class="float-left submit-button">Wyloguj</button>
+
+		<script type="text/javascript">
+			document.getElementById("logoutButton").onclick = function() {
+				location.href = "logout";
+			};
+		</script>
+
+	</div>
+
+</body>
+</html>

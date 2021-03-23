@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<meta charset="UTF-8">
+<title>Nowy Typ Anteny</title>
+</head>
+
+<style type="text/css">
+@import
+	url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700);
+
+.yellow {
+	color: #FFF842;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	line-height: 1.42em;
+	color: #FFFFFF;
+	background-color: #1F2739;
+}
+
+h1 {
+	font-size: 3em;
+	font-weight: 500;
+	text-align: center;
+	display: block;
+	line-height: 1em;
+	color: #FB667A;
+}
+
+.container td:last-child {
+	width: 400px;
+	text-align: left;
+	padding: 0px 20px;
+}
+
+.container td:first-child {
+	text-align: right;
+}
+
+.container td {
+	text-align: center;
+	font-weight: light;
+	font-size: 1em;
+	background-color: #1F2739;
+}
+
+table {
+	table-layout: fixed;
+	height: 400px;
+}
+
+input[type=text] {
+	font-family: 'Open Sans', sans-serif;
+	background-color: #2C3446;
+	color: #A7A1AE;
+	border: none;
+	width: 300px;
+	height: 30px;
+}
+
+button {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: light;
+	padding: 12px 24px;
+	color: #FFFFFF;
+	background-color: #323C50;
+	border: none;
+	font-size: 20px;
+}
+</style>
+
+<body>
+
+	<div align="center">
+		<!-- Page header -->
+		<h1><span class="yellow">Dodaj nowy Typ Anteny</span></h1>
+
+		<!-- End line/New line -->
+		<br />
+
+		<form action="#" th:action="@{/admin/saveAntennaType}" th:object="${antennaType}"
+			method="post">
+			<!-- Table -->
+			<table class="container">
+
+				<!-- Table rows -->
+				<tr>
+					<td>ID Typu Anteny:</td>
+					<td><input type="text" th:field="*{id_typu_anteny}"></td>
+				</tr>
+
+				<tr>
+					<td>Zysk energetyczny:</td>
+					<td><input type="text" th:field="*{zysk_energetyczny}"></td>
+				</tr>
+
+				<tr>
+					<td>Temperatura szumowa:</td>
+					<td><input type="text" th:field="*{temperatura_szumowa}"></td>
+				</tr>
+
+				<tr>
+					<td>Współczynnik szumów:</td>
+					<td><input type="text" th:field="*{wspolczynnik_szumow}"></td>
+				</tr>
+
+			</table>
+
+			<br />
+			<button type="submit">Zapisz</button>
+		</form>
+
+
+	</div>
+
+</body>
+
+</html>
